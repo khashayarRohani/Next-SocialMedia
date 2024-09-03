@@ -2,32 +2,228 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  background-color: rgb(39, 144, 146);
+}
+.container {
+  position: relative; /* Make the container relative to position the overlay */
+  width: 100%;
+  height: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.container .full-screen-image {
+  position: absolute; /* Fix the image to the viewport */
+  top: 4rem;
+  left: 15px;
+  width: 15%; /* Full viewport width */
+
+  cursor: pointer; /* Indicate that the image is clickable */
+}
+
+.overlay {
+  position: absolute; /* Position the text overlay absolutely */
+  left: 80px;
+  top: 5rem;
+  color: white; /* Text color */
+  font-size: 10px; /* Adjust the font size */
+  text-align: center; /* Center the text */
+  font-weight: 900;
+}
+
+.NavItem1Hide {
+  display: none;
+}
+.NavItem2Hide {
+  display: none;
+}
+.NavItem3Hide {
+  display: none;
+}
+
+.SelectItem1Hide {
+  display: block;
+}
+.SelectItem2Hide {
+  display: block;
+}
+.SelectItem3Hide {
+  display: block;
+}
+.HEADEPOS {
+  z-index: 1000;
+}
+.overlay button {
+  background: none;
+  color: rgb(251, 251, 251);
+  border: 2px solid rgb(0, 247, 255);
+  font-weight: 900;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  padding: 0% 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.overlay button:hover {
+  background-color: rgb(255, 213, 47);
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(229, 255, 0);
+  box-shadow: 0 0 10px white;
+}
+.overlay p {
+  color: rgb(255, 179, 0);
+  text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+@media (min-width: 500px) {
+  .overlay {
+    position: absolute; /* Position the text overlay absolutely */
+    left: 140px;
+    top: 6rem;
   }
+}
+@media (min-width: 500px) {
+  .overlay {
+    position: absolute; /* Position the text overlay absolutely */
+    left: 140px;
+    top: 6rem;
+  }
+}
+@media (min-width: 900px) {
+  .overlay {
+    position: absolute; /* Position the text overlay absolutely */
+    left: 190px;
+    top: 7rem;
+  }
+}
+@media (min-width: 560px) {
+  .NavItem1Hide {
+    display: block;
+  }
+  .SelectItem1Hide {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  .NavItem2Hide {
+    display: block;
+  }
+  .SelectItem2Hide {
+    display: none;
+  }
+}
+
+@media (min-width: 700px) {
+  .NavItem3Hide {
+    display: block;
+  }
+  .SelectItem3Hide {
+    display: none;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+/* .divTable {
+  display: flex;
+  align-items: center;
+  width: 96vw;
+} */
+Table {
+  background-color: antiquewhite;
+  font-size: small;
+  color: #44025c;
+  border-radius: 15px;
+  /* width: 96vw; */
+  width: 100%;
+}
+table button {
+  cursor: pointer;
+  display: flex;
+  background-color: red;
+  width: 60px;
+  justify-content: center;
+  padding: 5%;
+  border-radius: 3px;
+}
+.trBody {
+  display: flex;
+  border-bottom: solid 1px black;
+  justify-content: space-between;
+}
+.trHead {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: solid 1px black;
+  margin: 0;
+}
+
+td {
+  display: flex;
+
+  align-items: center;
+  padding: 2%;
+}
+thead {
+  background-color: azure;
 }

@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  padding: 2%;
+  margin-top: 5px;
+  z-index: 1000;
+}
+.header h1 {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  text-shadow: 0 0 2px black, 0 0 3px rgb(255, 255, 255);
+}
+.header button {
+  background: none;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(52, 101, 185);
+  font-weight: 900;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  padding: 0% 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0 0 8px black;
+}
+.header button:hover {
+  background-color: #1f1f1f;
+  color: rgb(255, 255, 255);
+}
+
+.header a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(43, 82, 172);
+  border-radius: 10px;
+  padding-top: 7%;
+  font-size: 15px;
+  box-shadow: 0 0 8px #1f1f1f;
+  text-align: center;
+  height: 2.72rem;
+
+  font-weight: 900;
+}
+.header a:hover {
+  text-decoration: underline;
+}
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
